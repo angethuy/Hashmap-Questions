@@ -10,6 +10,12 @@ def palindrome_permutation?(string)
     hash.has_key?(letter) ? hash[letter] += 1 : hash[letter] = 1
   end
 
-  return hash.select{ |k,v| v.odd? }.size <= 1 
-  
+  pivot_letters = 0
+
+  hash.each do |k, v| 
+    pivot_letters += 1 if v.odd?
+    return false if pivot_letters > 1 #catch early cases of finding more than 1 pivot letter
+  end
+
+  return true
 end

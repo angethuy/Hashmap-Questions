@@ -12,7 +12,7 @@ def permutations?(string1, string2)
   end
 
   string2.chars.each do |letter|
-    return false unless hash.has_key?(letter) && hash[letter] > 0
+    return false unless hash.has_key?(letter) && hash[letter] > 0 #quickly catch obvious fail cases 
     hash[letter] -= 1
   end
 
