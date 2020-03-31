@@ -16,5 +16,5 @@ def permutations?(string1, string2)
     hash[letter] -= 1
   end
 
-  hash.any? {|key, value| value > 0} ? false : true 
+  return !(hash.any? {|key, value| value > 0})
 end
